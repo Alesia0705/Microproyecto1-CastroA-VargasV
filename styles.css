@@ -1,60 +1,145 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif; /* Fuente de letra legible */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Fondo sutil */
+    margin: 0; /* Elimina márgenes predeterminados del body */
 }
 
 #game-container {
     text-align: center;
+    background-color: #f8f8f8; /* Fondo del contenedor */
+    padding: 30px; /* Aumenta el padding */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
 }
 
 #color-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 100px);
-    grid-gap: 10px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(2, 120px); /* Aumenta el tamaño de los botones */
+    grid-gap: 15px; /* Aumenta el espacio entre botones */
+    margin-bottom: 30px;
 }
 
 .color-button {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px; /* Bordes más redondeados */
     cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    opacity: 0.7; /* Opacidad inicial más baja */
+    transition: opacity 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra inicial en los botones */
 }
 
 .red {
-    background-color: red;
+    background-color: #ff4444; /* Rojo más vivo */
 }
 
 .green {
-    background-color: green;
+    background-color: #4CAF50; /* Verde más vivo */
 }
 
 .blue {
-    background-color: blue;
+    background-color: #2196F3; /* Azul más vivo */
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: #FFEB3B; /* Amarillo más vivo */
 }
 
 .color-button:active {
-    opacity: 1;
+    opacity: 1; /* Opacidad completa al hacer clic */
+    transform: scale(1.05); /* Ligeramente más grande al hacer clic */
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7); /* Brillo al hacer clic */
+}
+
+#score-container {
+    margin-bottom: 20px;
 }
 
 #score-table {
+    width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra en la tabla */
 }
 
-#score-table th, #score-table td {
-    padding: 8px;
+#score-table th,
+#score-table td {
+    padding: 12px;
     border: 1px solid #ddd;
     text-align: left;
+}
+
+#score-table th {
+    background-color: #f5f5f5; /* Fondo más claro para encabezados */
+    font-weight: bold;
+}
+
+#name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#name-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#name-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 250px; /* Ancho fijo para el input */
+}
+
+#name-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#name-form button:hover {
+    background-color: #45a049;
+}
+
+#restart-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: #0056b3;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    #color-buttons {
+        grid-template-columns: repeat(2, 100px); /* Botones más pequeños en pantallas pequeñas */
+        grid-gap: 10px;
+    }
+
+    .color-button {
+        width: 100px;
+        height: 100px;
+    }
+
+    #name-form input {
+        width: 90%; /* Ancho completo en pantallas pequeñas */
+    }
 }
