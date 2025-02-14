@@ -1,32 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon Says</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>Simón Dice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div id="game-container">
-        <h1>Simon Says</h1>
-
-        <form id="name-form">
-            <label for="player-name">Nombre:</label>
-            <input type="text" id="player-name" required>
-            <button type="submit">Iniciar Juego</button>
-        </form>
-
+        <h1>Simón Dice</h1>
         <div id="color-buttons">
-            <button id="btn-red" class="color-button red"></button>
-            <button id="btn-green" class="color-button green"></button>
-            <button id="btn-blue" class="color-button blue"></button>
-            <button id="btn-yellow" class="color-button yellow"></button>
+            <button id="btn-red" class="color-button red" data-sound="red"></button>
+            <button id="btn-green" class="color-button green" data-sound="green"></button>
+            <button id="btn-blue" class="color-button blue" data-sound="blue"></button>
+            <button id="btn-yellow" class="color-button yellow" data-sound="yellow"></button>
         </div>
-
         <div id="score-container">
             <p>Puntuación: <span id="current-score">0</span></p>
             <p>Mejor Puntaje: <span id="best-score">0</span></p>
         </div>
-
         <h2>Tabla de Puntajes</h2>
         <table id="score-table">
             <thead>
@@ -35,14 +25,16 @@
                     <th>Puntaje</th>
                 </tr>
             </thead>
-            <tbody>
-                </tbody>
+            <tbody></tbody>
         </table>
-
         <button id="restart-button">Reiniciar Juego</button>
     </div>
 
+    <audio id="sound-red" src="sonido_rojo.mp3"></audio>
+    <audio id="sound-green" src="sonido_verde.mp3"></audio>
+    <audio id="sound-blue" src="sonido_azul.mp3"></audio>
+    <audio id="sound-yellow" src="sonido_amarillo.mp3"></audio>
+
     <script src="script.js"></script>
 </body>
-
 </html>
