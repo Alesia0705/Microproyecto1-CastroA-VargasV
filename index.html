@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simón Dice</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="game-container">
         <h1>Simón Dice</h1>
-        <img src="images/simon_dice.png" alt="Simon Game" width="200px" height="150px">
-        </div>
-        <div id="name-form">  <label for="player-name">Nombre del Jugador:</label>
+        <img src="images/simon_dice.png" alt="Simon Game" width="200" height="150">
+
+        <div id="name-form">
+            <label for="player-name">Nombre del Jugador:</label>
             <input type="text" id="player-name" name="player-name">
             <button id="submit-name">Guardar</button>
         </div>
+
         <div id="color-buttons">
             <button id="btn-red" class="color-button red" data-sound="red"></button>
             <button id="btn-green" class="color-button green" data-sound="green"></button>
             <button id="btn-blue" class="color-button blue" data-sound="blue"></button>
             <button id="btn-yellow" class="color-button yellow" data-sound="yellow"></button>
         </div>
+
         <div id="score-container">
             <p>Puntuación: <span id="current-score">0</span></p>
             <p>Mejor Puntaje: <span id="best-score">0</span></p>
         </div>
+
         <h2>Tabla de Puntajes</h2>
         <table id="score-table">
             <thead>
@@ -33,6 +39,7 @@
             </thead>
             <tbody></tbody>
         </table>
+
         <button id="restart-button">Reiniciar Juego</button>
     </div>
 
