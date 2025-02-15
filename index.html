@@ -1,189 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simón Dice</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        /* Estilos básicos para centrar elementos y dar formato */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: sans-serif;
-            margin: 0;
-            background-color: black; /* Fondo negro */
-            color: white; /* Color de texto blanco para contraste */
-        }
+      /* Estilos básicos para centrar elementos y dar formato */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: sans-serif;
+        margin: 0;
+        background-color: black; /* Fondo negro */
+        color: white; /* Color de texto blanco para contraste */
+      }
 
-        #contenedor-principal {
-            width: 80%;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
+      #contenedor-principal {
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+      }
 
-        #contenedor-principal img {
-            width: 300px;
-            height: auto;
-        }
+      #contenedor-principal img {
+        width: 300px;
+        height: auto;
+      }
 
-        #pantalla-juego {
-            display: none;
-        }
+      #pantalla-juego {
+        display: none;
+      }
 
-        #tabla-puntajes {
-            display: none;
-        }
+      #tabla-puntajes {
+        display: none;
+      }
 
-        table {
-            width: 100%;
-            font-size: 1.2em;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
+      table {
+        width: 100%;
+        font-size: 1.2em;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
 
-        th, td {
-            padding: 15px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
+      th,
+      td {
+        padding: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
 
-        #color-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+      #color-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
 
-        .color-button {
-            width: 80px;
-            height: 80px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            text-transform: uppercase; /* Mayúsculas en los botones */
-        }
+      .color-button {
+        width: 80px;
+        height: 80px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        text-transform: uppercase; /* Mayúsculas en los botones */
+      }
 
-        .red { background-color: red; }
-        .green { background-color: green; }
-        .blue { background-color: blue; }
-        .yellow { background-color: yellow; }
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .yellow {
+        background-color: yellow;
+      }
 
-        #score-container {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-        }
+      #score-container {
+        margin-bottom: 20px;
+        font-size: 1.1em;
+      }
 
-        /* Estilos para el título "Simón Dice" */
-        h1 {
-            font-size: 3em;
-            font-weight: bold;
-            text-align: center; /* Centrar el título */
-            margin-bottom: 20px; /* Espacio debajo del título */
-            text-transform: uppercase; /* Mayúsculas en el título */
-        }
+      /* Estilos para el título "Simón Dice" */
+      h1 {
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center; /* Centrar el título */
+        margin-bottom: 20px; /* Espacio debajo del título */
+        text-transform: uppercase; /* Mayúsculas en el título */
+      }
 
-        /* Estilos para la imagen */
-        #contenedor-principal img {
-            width: 300px;
-            height: auto;
-            display: block; /* Para que la imagen se comporte como un bloque */
-            margin: 0 auto; /* Centrar la imagen horizontalmente */
-            margin-bottom: 20px; /* Espacio debajo de la imagen */
-        }
+      /* Estilos para la imagen */
+      #contenedor-principal img {
+        width: 300px;
+        height: auto;
+        display: block; /* Para que la imagen se comporte como un bloque */
+        margin: 0 auto; /* Centrar la imagen horizontalmente */
+        margin-bottom: 20px; /* Espacio debajo de la imagen */
+      }
 
-         #pantalla-inicial {
-            display: flex;
-            flex-direction: column; /* Alinea los elementos verticalmente */
-            align-items: center; /* Centra los elementos horizontalmente */
-        }
+      #pantalla-inicial {
+        display: flex;
+        flex-direction: column; /* Alinea los elementos verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+      }
 
-        .letra {
-            display: inline-block;
-        }
+      .letra {
+        display: inline-block;
+      }
 
-        .verde {
-            color: green;
-        }
+      .verde {
+        color: green;
+      }
 
-        .azul {
-            color: blue;
-        }
+      .azul {
+        color: blue;
+      }
 
-        .amarillo {
-            color: yellow;
-        }
+      .amarillo {
+        color: yellow;
+      }
 
-        .rojo {
-            color: red;
-        }
+      .rojo {
+        color: red;
+      }
 
-        .espacio {
-            margin: 0 0.2em;
-        }
+      .espacio {
+        margin: 0 0.2em;
+      }
 
-        /* Estilos para el resto del texto en mayúsculas */
-        label, button, h2, p {
-            text-transform: uppercase;
-        }
+      /* Estilos para el resto del texto en mayúsculas */
+      label,
+      button,
+      h2,
+      p {
+        text-transform: uppercase;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="contenedor-principal">
-        <div id="pantalla-inicial">
-            <h1>
-                <span class="letra verde">S</span>
-                <span class="letra azul">i</span>
-                <span class="letra amarillo">m</span>
-                <span class="letra rojo">ó</span>
-                <span class="letra verde">n</span>
-                <span class="letra espacio"> </span>
-                <span class="letra azul">D</span>
-                <span class="letra amarillo">i</span>
-                <span class="letra rojo">c</span>
-                <span class="letra verde">e</span>
-            </h1>
-            <img src="images/simon_dice.png" alt="Simon Game">
-            <div id="name-form">
-                <label for="player-name">Nombre del Jugador:</label>
-                <input type="text" id="player-name" name="player-name">
-                <button id="submit-name">Guardar</button>
-            </div>
+      <div id="pantalla-inicial">
+        <h1>
+          <span class="letra verde">S</span>
+          <span class="letra azul">i</span>
+          <span class="letra amarillo">m</span>
+          <span class="letra rojo">ó</span>
+          <span class="letra verde">n</span>
+          <span class="letra espacio"> </span>
+          <span class="letra azul">D</span>
+          <span class="letra amarillo">i</span>
+          <span class="letra rojo">c</span>
+          <span class="letra verde">e</span>
+        </h1>
+        <img src="images/simon_dice.png" alt="Simon Game" />
+        <div id="name-form">
+          <label for="player-name">Nombre del Jugador:</label>
+          <input type="text" id="player-name" name="player-name" />
+          <button id="submit-name">Guardar</button>
         </div>
+      </div>
 
-        <div id="pantalla-juego">
-            <h2>¡Juego Simón Dice!</h2>
-            <div id="color-buttons">
-                <button id="btn-red" class="color-button red" data-sound="red"></button>
-                <button id="btn-green" class="color-button green" data-sound="green"></button>
-                <button id="btn-blue" class="color-button blue" data-sound="blue"></button>
-                <button id="btn-yellow" class="color-button yellow" data-sound="yellow"></button>
-            </div>
-            <div id="score-container">
-                <p>Puntuación: <span id="current-score">0</span></p>
-                <p>Mejor Puntaje: <span id="best-score">0</span></p>
-            </div>
+      <div id="pantalla-juego">
+        <h2>¡Juego Simón Dice!</h2>
+        <div id="color-buttons">
+          <button id="btn-red" class="color-button red"></button>
+          <button id="btn-green" class="color-button green"></button>
+          <button id="btn-blue" class="color-button blue"></button>
+          <button id="btn-yellow" class="color-button yellow"></button>
         </div>
+        <div id="score-container">
+          <p>Puntuación: <span id="current-score">0</span></p>
+          <p>Mejor Puntaje: <span id="best-score">0</span></p>
+        </div>
+      </div>
 
-        <div id="tabla-puntajes">
-            <h2>Tabla de Puntajes</h2>
-            <table id="score-table">
-                <thead>
-                    <tr>
-                        <th>Jugador</th>
-                        <th>Puntaje</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-puntajes">
-                    {Aquí se mostrarán los puntajes}
-                </tbody>
-            </table>
-            <button id="restart-button">Reiniciar Juego</button>
-        </div>
+      <div id="tabla-puntajes">
+        <h2>Tabla de Puntajes</h2>
+        <table id="score-table">
+          <thead>
+            <tr>
+              <th>Jugador</th>
+              <th>Puntaje</th>
+            </tr>
+          </thead>
+          <tbody id="lista-puntajes">
+            <!-- Aquí se mostrarán los puntajes -->
+          </tbody>
+        </table>
+        <button id="restart-button">Reiniciar Juego</button>
+      </div>
     </div>
 
     <audio id="sound-red" src="sonido_rojo.mp3"></audio>
@@ -192,5 +204,5 @@
     <audio id="sound-yellow" src="sonido_amarillo.mp3"></audio>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
