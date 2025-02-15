@@ -16,7 +16,7 @@ const flashColor = (color) => {
   const button = document.getElementById(`btn-${color}`);
   button.style.opacity = "1";
   setTimeout(() => {
-    button.style.opacity = "0.7";
+    button.style.opacity = "0.5";
   }, 500);
 };
 /*Funcion que permite que el boton tenga el efecto de que esta 
@@ -123,7 +123,9 @@ document.getElementById("submit-name").addEventListener("click", (Event) => {
       localStorage.getItem(playerName) || 0;
     nextLevel();
   } else {
-    alert("Por favor, ingrese su nombre. ");
+    alert(
+      "Por favor, ingrese su nombre. Y asegurese de no tener caracteres distintos a numeros o letras"
+    );
   }
 });
 /*Evento que permite iniciar el juego cuando el jugador ingresa
