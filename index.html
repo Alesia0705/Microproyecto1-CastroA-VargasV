@@ -170,12 +170,29 @@
       <div id="pantalla-juego">
         <h2>¡Juego Simón Dice!</h2>
         <div id="color-buttons">
-          <button id="btn-red" class="color-button red"></button>
-          <button id="btn-green" class="color-button green"></button>
-          <button id="btn-blue" class="color-button blue"></button>
-          <button id="btn-yellow" class="color-button yellow"></button>
+          <button
+            id="btn-red"
+            class="color-button red"
+            data-sound="red"
+          ></button>
+          <button
+            id="btn-green"
+            class="color-button green"
+            data-sound="green"
+          ></button>
+          <button
+            id="btn-blue"
+            class="color-button blue"
+            data-sound="blue"
+          ></button>
+          <button
+            id="btn-yellow"
+            class="color-button yellow"
+            data-sound="yellow"
+          ></button>
         </div>
         <div id="score-container">
+          <p>Nivel: <span id="level">0</span></p>
           <p>Puntuación: <span id="current-score">0</span></p>
           <p>Mejor Puntaje: <span id="best-score">0</span></p>
         </div>
@@ -198,10 +215,10 @@
       </div>
     </div>
 
-    <audio id="sound-red" src="sonido_rojo.mp3"></audio>
-    <audio id="sound-green" src="sonido_verde.mp3"></audio>
-    <audio id="sound-blue" src="sonido_azul.mp3"></audio>
-    <audio id="sound-yellow" src="sonido_amarillo.mp3"></audio>
+    <audio id="sound-red" src="sounds/sonido_rojo.mp3"></audio>
+    <audio id="sound-green" src="sounds/sonido_verde.mp3"></audio>
+    <audio id="sound-blue" src="sounds/sonido_azul.mp3"></audio>
+    <audio id="sound-yellow" src="sounds/sonido_amarillo.mp3"></audio>
 
     <script src="script.js"></script>
   </body>
