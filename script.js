@@ -94,7 +94,7 @@ const nextLevel = () => {
   level++;
   document.getElementById("level").innerText = level;
   playerSequence = [];
-  colorSequence.push(colors[Math.floor(Math.random() * colors)]);
+  colorSequence.push(colors[Math.floor(Math.random() * 4)]);
   playSequence();
 };
 /*Funcion que permite que se avance de nivel, agregando un nuevo color a la 
