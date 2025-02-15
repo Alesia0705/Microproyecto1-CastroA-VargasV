@@ -8,10 +8,10 @@ let playerName = "";
 
 const playSound = (color) => {
   const soundMap = {
-    red: "sounds/sonido_rojo.mp3.mp3",
-    green: "sounds/sonido_verde.mp3.mp3",
-    blue: "sounds/sonido_azul.mp3.mp3",
-    yellow: "sounds/sonido_amarillo.mp3.mp3",
+    red: "sounds/sonido_rojo.mp3",
+    green: "sounds/sonido_verde.mp3",
+    blue: "sounds/sonido_azul.mp3",
+    yellow: "sounds/sonido_amarillo.mp3",
   };
   const audio = new Audio(soundMap[color]);
   audio.play();
