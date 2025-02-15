@@ -147,7 +147,6 @@ document.getElementById("restart-button").addEventListener("click", () => {
   document.getElementById("pantalla-juego").style.display = "none";
   document.getElementById("tabla-puntajes").style.display = "block";
   document.getElementById("pantalla-inicial").style.display = "block";
-  resetGame();
 });
 /*Evento que muestra la tabla de puntajes altos y que posteriormente
 permite que se reinicie el juego.*/
