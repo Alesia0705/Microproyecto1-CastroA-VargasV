@@ -74,17 +74,22 @@ const checkPlayerSequence = () => {
 /*Funcion que permite verificar que la secuencia del jugador 
 sea igual a la secuencia dada por el juego*/
 
-const nextLevel = () => {
-  level++;
-  document.getElementById("level").innerText = level;
-  playerSequence = [];
-  colorSequence.push(colors[Math.floor(Math.random() * 4)]);
+const playSequence = () => {
   colorSequence.forEach((color, index) => {
     setTimeout(() => {
       flashColor(color);
       playSound(color);
     }, (index + 1) * 1000);
   });
+};
+/*Funcion que permite mostrar la secuencia que se debe jugar*/
+
+const nextLevel = () => {
+  level++;
+  document.getElementById("level").innerText = level;
+  playerSequence = [];
+  colorSequence.push(colors[Math.floor(Math.random() * 4)]);
+  playSequence();
 };
 /*Funcion que permite que se avance de nivel, agregando un nuevo color a la 
 secuencia que ya estaba y la reproduce de nuevo agregando el nuevo color*/
