@@ -5,7 +5,9 @@ let level = 0;
 let score = 0;
 let highScore = 0;
 let playerName = "";
-
+/**
+ * pruebas
+ */
 const playSound = (color) => {
   const soundMap = {
     red: "sounds/sonido_rojo.mp3.mp3",
